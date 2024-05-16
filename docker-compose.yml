@@ -25,7 +25,7 @@ services:
       - helen_db
   helen_frontend:
     container_name: helen_frontend
-    image: joseantonioleon/helen_frontend:1.0.0
+    image: joseantonioleon/helen_frontend:1.0.1
     ports:
       - 80:80
     depends_on:
