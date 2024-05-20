@@ -12,6 +12,8 @@ services:
       MYSQL_ROOT_PASSWORD: 'root'
     volumes:
       - 'helen_db_volume:/var/lib/mysql'
+    restart: always
+
   helen_backend:
     container_name: helen_backend
     image: joseantonioleon/helen_backend:1.0.0
@@ -23,6 +25,8 @@ services:
      - DATABASE_PASSWORD=root
     depends_on:
       - helen_db
+    restart: always
+
   helen_frontend:
     container_name: helen_frontend
     image: joseantonioleon/helen_frontend:1.0.1
@@ -30,6 +34,7 @@ services:
       - 80:80
     depends_on:
       - helen_backend
+    restart: always
 
 volumes:
   helen_db_volume:
